@@ -1,19 +1,21 @@
+import React, { useState } from 'react';
+import './App.css';
+import ChildComponent from './ChildComponent';
+import { createContext } from 'react';
 
-import { useState } from 'react'
-import './App.css'
+export const MyContext = createContext();
 
 function App() {
-
- const [count, setCount] = useState(0)
-
+  const [user, setUser] = useState({
+    name: 'giga',
+    surname: 'kakulia',
+  });
 
   return (
-    <>
-    <h1>{count}</h1>
-    <button onClick={() => setCount(count + 1)}> {count}</button>
-  
-    </>
-  )
+    <MyContext.Provider value={{ user, setUser }}>
+      <ChildComponent />
+    </MyContext.Provider>
+  );
 }
 
-export default App
+export default App;
