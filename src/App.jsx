@@ -4,6 +4,11 @@ import ChildComponent from './ChildComponent';
 import { createContext } from 'react';
 import Test from './Test';
 import Test1 from './Test1';
+import Test2 from './Test2';
+
+
+import { createTodos } from './utils.jsx';
+import TodoList from './TodoList.jsx';
 
 export const MyContext = createContext();
 
@@ -20,9 +25,13 @@ export const MyContext = createContext();
 //   }
 // }
 
+
+const todos = createTodos();
+
 function App() {
 
-
+  const [tab, setTab] = useState('all');
+  const [isDark, setIsDark] = useState(false);
   // const [user, setUser] = useState({
   //   name: 'giga',
   //   surname: 'kakulia',
@@ -54,7 +63,36 @@ function App() {
   <button onClick={()=> dispatch({type: 'decrement'})}>-</button>
   <button onClick={()=> dispatch({type: 'increment'})}>+</button> */}
   {/* <Test/> */}
-  <Test1/>
+  {/* <Test1/> */}
+  {/* <Test2/> */}
+
+{/* raghaca */}
+
+  <button onClick={() => setTab('all')}>
+        All
+      </button>
+      <button onClick={() => setTab('active')}>
+        Active
+      </button>
+      <button onClick={() => setTab('completed')}>
+        Completed
+      </button>
+      <br />
+      <label>
+        <input
+          type="checkbox"
+          checked={isDark}
+          onChange={e => setIsDark(e.target.checked)}
+        />
+        Dark mode
+      </label>
+      <hr />
+      <TodoList
+        todos={todos}
+        tab={tab}
+        theme={isDark ? 'dark' : 'light'}
+      />
+
   </>
   );
 }
