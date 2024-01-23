@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useReducer, useRef, useState } from 'react';
 import './App.css';
 import ChildComponent from './ChildComponent';
 import { createContext } from 'react';
@@ -32,6 +32,20 @@ export const MyContext = createContext();
 
 function App() {
 
+  // const myBtn = useRef(null)
+  const [width, setWidth] = useState(0);
+  useEffect(() => {
+    // This effect runs asynchronously after the browser has painted
+    console.log('useEffect - Async');
+    document.title = `Width: ${width}`;
+  }, [width]);
+
+  useLayoutEffect(() => {
+    // This effect runs synchronously before the browser paints
+    console.log('useLayoutEffect - Sync');
+    setWidth(200); // Example DOM mutation
+  }, []);
+
   // const [tab, setTab] = useState('all');
   // const [isDark, setIsDark] = useState(false);
   // const [user, setUser] = useState({
@@ -55,13 +69,13 @@ function App() {
   // const [state, dispatch] = useReducer(reducer, 0) 
 
 
-  const ref = useRef(null);
+  // const ref = useRef(null);
 
-  function handleClick() {
-    ref.current.focus();
-    // This won't work because the DOM node isn't exposed:
-    // ref.current.style.opacity = 0.5;
-  }
+  // function handleClick() {
+  //   ref.current.focus();
+  //   // This won't work because the DOM node isn't exposed:
+  //   // ref.current.style.opacity = 0.5;
+  // }
 
   return (
   //   <MyContext.Provider value={{ user, setUser }}>
@@ -106,12 +120,16 @@ function App() {
 {/* <Test3/> */}
 {/* <Clock/> */}
 
-<form>
+{/* <form>
       <MyInput placeholder="Enter your name" ref={ref} />
       <button type="button" onClick={handleClick}>
         Edit
       </button>
-    </form>
+    </form> */}
+
+<div>
+      <p>Width: {width}</p>
+    </div>
   </>
   );
 }
