@@ -6,7 +6,7 @@ import Test from './Test';
 import Test1 from './Test1';
 import Test2 from './Test2';
 import Test3 from './Test3';
-
+import MyInput from './MyInput.jsx';
 
 import { createTodos } from './utils.jsx';
 import TodoList from './TodoList.jsx';
@@ -54,6 +54,15 @@ function App() {
 
   // const [state, dispatch] = useReducer(reducer, 0) 
 
+
+  const ref = useRef(null);
+
+  function handleClick() {
+    ref.current.focus();
+    // This won't work because the DOM node isn't exposed:
+    // ref.current.style.opacity = 0.5;
+  }
+
   return (
   //   <MyContext.Provider value={{ user, setUser }}>
   //     <ChildComponent />
@@ -95,7 +104,14 @@ function App() {
         theme={isDark ? 'dark' : 'light'}
       /> */}
 {/* <Test3/> */}
-<Clock/>
+{/* <Clock/> */}
+
+<form>
+      <MyInput placeholder="Enter your name" ref={ref} />
+      <button type="button" onClick={handleClick}>
+        Edit
+      </button>
+    </form>
   </>
   );
 }
