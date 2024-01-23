@@ -5,6 +5,7 @@ import { createContext } from 'react';
 import Test from './Test';
 import Test1 from './Test1';
 import Test2 from './Test2';
+import Test3 from './Test3';
 
 
 import { createTodos } from './utils.jsx';
@@ -26,12 +27,12 @@ export const MyContext = createContext();
 // }
 
 
-const todos = createTodos();
+// const todos = createTodos();
 
 function App() {
 
-  const [tab, setTab] = useState('all');
-  const [isDark, setIsDark] = useState(false);
+  // const [tab, setTab] = useState('all');
+  // const [isDark, setIsDark] = useState(false);
   // const [user, setUser] = useState({
   //   name: 'giga',
   //   surname: 'kakulia',
@@ -68,7 +69,7 @@ function App() {
 
 {/* raghaca */}
 
-  <button onClick={() => setTab('all')}>
+  {/* <button onClick={() => setTab('all')}>
         All
       </button>
       <button onClick={() => setTab('active')}>
@@ -91,8 +92,8 @@ function App() {
         todos={todos}
         tab={tab}
         theme={isDark ? 'dark' : 'light'}
-      />
-
+      /> */}
+<Test3/>
   </>
   );
 }
