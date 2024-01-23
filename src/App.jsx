@@ -10,6 +10,7 @@ import Test3 from './Test3';
 
 import { createTodos } from './utils.jsx';
 import TodoList from './TodoList.jsx';
+import Clock from './Clock';
 
 export const MyContext = createContext();
 
@@ -93,7 +94,8 @@ function App() {
         tab={tab}
         theme={isDark ? 'dark' : 'light'}
       /> */}
-<Test3/>
+{/* <Test3/> */}
+<Clock/>
   </>
   );
 }
