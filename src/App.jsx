@@ -8,6 +8,7 @@ import Gallery from './Gallery';
 // import Test2 from './Test2';
 // import Test3 from './Test3';
 import Test4 from './Test4';
+import Challenge from './Challenge';
 // import MyInput from './MyInput.jsx';
 
 // import { createTodos } from './utils.jsx';
@@ -175,7 +176,8 @@ function App() {
 /> */}
 
 {/* <Gallery/> */}
-<Test4/>
+{/* <Test4/> */}
+<Challenge/>
   </>
   );
 }

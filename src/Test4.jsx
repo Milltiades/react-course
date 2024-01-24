@@ -34,10 +34,12 @@ const Test4 = () => {
 <>
 <h1>{number}</h1>
 <button onClick={() => {
+  setNumber(number + 5);
   setNumber(n => n + 1);
-  setNumber(n => n + 1);
-  setNumber(n => n + 1);
-}}>+3</button>
+  setNumber(42)
+//   setNumber(n => n + 1);
+//   setNumber(n => n + 1);
+}}>+?</button>
 </>
   )
 }
