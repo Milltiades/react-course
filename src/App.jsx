@@ -1,18 +1,22 @@
 import React, { useEffect, useLayoutEffect, useReducer, useRef, useState } from 'react';
 import './App.css';
-import ChildComponent from './ChildComponent';
-import { createContext } from 'react';
-import Test from './Test';
-import Test1 from './Test1';
-import Test2 from './Test2';
-import Test3 from './Test3';
-import MyInput from './MyInput.jsx';
+// import ChildComponent from './ChildComponent';
+// import { createContext } from 'react';
+// import Test from './Test';
+// import Test1 from './Test1';
+// import Test2 from './Test2';
+// import Test3 from './Test3';
+// import MyInput from './MyInput.jsx';
 
-import { createTodos } from './utils.jsx';
-import TodoList from './TodoList.jsx';
-import Clock from './Clock';
+// import { createTodos } from './utils.jsx';
+// import TodoList from './TodoList.jsx';
+// import Clock from './Clock';
+import Profile from './Profile';
+import { people } from './data.jsx';
+import { getImageUrl } from './utils.jsx';
 
-export const MyContext = createContext();
+
+// export const MyContext = createContext();
 
 
 
@@ -30,21 +34,46 @@ export const MyContext = createContext();
 
 // const todos = createTodos();
 
+function useDisplayName() {
+  // const [displayName, setDisplayName] = useState()
+
+  // useEffect(() => {
+  //   const data = fetchFromDatabase(props.userId)
+  //   setDisplayName(data.displayName)
+  // }, [])
+  // return displayName;
+}
+
 function App() {
+  const listItems = people.map(person =>
+    <li key={person.id}>
+      <img
+        src={getImageUrl(person)}
+        alt={person.name}
+      />
+      <p>
+        <b>{person.name}:</b>
+        {' ' + person.profession + ' '}
+        known for {person.accomplishment}
+      </p>
+    </li>
+  )
+// const displayName = useDisplayName()
+
 
   // const myBtn = useRef(null)
-  const [width, setWidth] = useState(0);
-  useEffect(() => {
-    // This effect runs asynchronously after the browser has painted
-    console.log('useEffect - Async');
-    document.title = `Width: ${width}`;
-  }, [width]);
+  // const [width, setWidth] = useState(0);
+  // useEffect(() => {
+  //   // This effect runs asynchronously after the browser has painted
+  //   console.log('useEffect - Async');
+  //   document.title = `Width: ${width}`;
+  // }, [width]);
 
-  useLayoutEffect(() => {
-    // This effect runs synchronously before the browser paints
-    console.log('useLayoutEffect - Sync');
-    setWidth(200); // Example DOM mutation
-  }, []);
+  // useLayoutEffect(() => {
+  //   // This effect runs synchronously before the browser paints
+  //   console.log('useLayoutEffect - Sync');
+  //   setWidth(200); // Example DOM mutation
+  // }, []);
 
   // const [tab, setTab] = useState('all');
   // const [isDark, setIsDark] = useState(false);
@@ -127,9 +156,16 @@ function App() {
       </button>
     </form> */}
 
-<div>
+{/* <div>
       <p>Width: {width}</p>
-    </div>
+    </div> */}
+
+    {/* <button>{displayName}</button> */}
+    <Profile/>
+    <article>
+      <h1>Scientists</h1>
+      <ul>{listItems}</ul>
+    </article>
   </>
   );
 }
