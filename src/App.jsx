@@ -9,7 +9,8 @@ import './App.css';
 // import Test3 from './Test3';
 // import Test4 from './Test4';
 // import Challenge from './Challenge';
-import Arrays from './Arrays';
+// import Arrays from './Arrays';
+import State from './State';
 // import MyInput from './MyInput.jsx';
 
 // import { createTodos } from './utils.jsx';
@@ -179,7 +180,8 @@ function App() {
 {/* <Gallery/> */}
 {/* <Test4/> */}
 {/* <Challenge/> */}
-<Arrays />
+{/* <Arrays /> */}
+<State/>
   </>
   );
 }
