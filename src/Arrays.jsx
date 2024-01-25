@@ -25,25 +25,40 @@ import { useState } from 'react';
 //   { id: 2, name: 'Louise Nevelson'},
 // ];
 
-let initialArray = [
-    {id: 0, name: 'giga0'},
-    {id: 1, name: 'giga1'},
-    {id: 2, name: 'giga2'},
-    {id: 3, name: 'giga3'},
-    {id: 4, name: 'giga4'},
-]
-let arrId = 4;
+// let initialArray = [
+//     {id: 0, name: 'giga0'},
+//     {id: 1, name: 'giga1'},
+//     {id: 2, name: 'giga2'},
+//     {id: 3, name: 'giga3'},
+//     {id: 4, name: 'giga4'},
+// ]
+// let arrId = 4;
+
+const initialList = [
+    { id: 0, title: 'Big Bellies' },
+    { id: 1, title: 'Lunar Landscape' },
+    { id: 2, title: 'Terracotta Army' },
+  ];
 
 const Arrays = () => {
-    const [human, setHuman] = useState(initialArray)
-    const [newName, setNewName] = useState('')
-    const [insertAt, setInsertAt] = useState(0)
 
-    function handleCLickAdd() {
+    const [list, setList] = useState(initialList);
+
+  function handleClick() {
+    const nextList = [...list];
+    nextList.reverse();
+    setList(nextList);
+  }
+
+//     const [human, setHuman] = useState(initialArray)
+//     const [newName, setNewName] = useState('')
+//     const [insertAt, setInsertAt] = useState(0)
+
+//     function handleCLickAdd() {
         
-const newArr = [...human.slice(0, insertAt), {id: arrId++, name:newName}, ...human.slice(insertAt)]
-setHuman(newArr)
-    }
+// const newArr = [...human.slice(0, insertAt), {id: arrId++, name:newName}, ...human.slice(insertAt)]
+// setHuman(newArr)
+//     }
 
     // const [name, setName] = useState('');
     // const [artists, setArtists] = useState(
@@ -106,6 +121,17 @@ setHuman(newArr)
 
   return (
     <>
+
+<button onClick={handleClick}>
+        Reverse
+      </button>
+      <ul>
+        {list.map(artwork => (
+          <li key={artwork.id}>{artwork.title}</li>
+        ))}
+      </ul>
+
+
  {/* <button onClick={handleClick}>
         Move circles down!
       </button>
@@ -178,7 +204,7 @@ setHuman(newArr)
         ))}
       </ul> */}
 
-      <ul>
+      {/* <ul>
         {
             human.map((h,i) => (
                 <li key={i} onClick={() => setInsertAt(i)}>{h.name}</li>
@@ -186,7 +212,7 @@ setHuman(newArr)
         }
       </ul>
       <input type="text" onChange={(e) => setNewName(e.target.value)}/>
-      <button onClick={handleCLickAdd}>add</button>
+      <button onClick={handleCLickAdd}>add</button> */}
   </>
 
 
