@@ -1,14 +1,15 @@
 import React, { useEffect, useLayoutEffect, useReducer, useRef, useState } from 'react';
 import './App.css';
-import Gallery from './Gallery';
+// import Gallery from './Gallery';
 // import ChildComponent from './ChildComponent';
 // import { createContext } from 'react';
 // import Test from './Test';
 // import Test1 from './Test1';
 // import Test2 from './Test2';
 // import Test3 from './Test3';
-import Test4 from './Test4';
-import Challenge from './Challenge';
+// import Test4 from './Test4';
+// import Challenge from './Challenge';
+import Arrays from './Arrays';
 // import MyInput from './MyInput.jsx';
 
 // import { createTodos } from './utils.jsx';
@@ -177,7 +178,8 @@ function App() {
 
 {/* <Gallery/> */}
 {/* <Test4/> */}
-<Challenge/>
+{/* <Challenge/> */}
+<Arrays />
   </>
   );
 }
