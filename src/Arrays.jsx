@@ -1,16 +1,25 @@
 import React from 'react'
 import { useState } from 'react';
 
-let nextId = 0;
+// let nextId = 0;
+let initialArtists = [
+    { id: 0, name: 'Marta Colvin Andrade' },
+    { id: 1, name: 'Lamidi Olonade Fakeye'},
+    { id: 2, name: 'Louise Nevelson'},
+]
 
 const Arrays = () => {
 
-    const [name, setName] = useState('');
-    const [artists, setArtists] = useState([]);
+    // const [name, setName] = useState('');
+    // const [artists, setArtists] = useState([]);
+
+    const [artists, setArtists] = useState(
+        initialArtists
+      );
  
   return (
     <>
-    <h1>Inspiring sculptors:</h1>
+    {/* <h1>Inspiring sculptors:</h1>
     <input
       value={name}
       onChange={e => setName(e.target.value)}
@@ -24,7 +33,19 @@ const Arrays = () => {
       {artists.map(artist => (
         <li key={artist.id}>{artist.name}</li>
       ))}
-    </ul>
+    </ul> */}
+
+<h1>Inspiring sculptors:</h1>
+      <ul>
+        {artists.map((a) => (
+            <li key={a.id}>
+                {a.name}
+                <button onClick={() =>setArtists(
+                    artists.filter((e) => e.id !== a.id )
+                ) }>delete</button>
+            </li>
+        ))}
+      </ul>
   </>
   )
 }
