@@ -10,7 +10,7 @@ import './App.css';
 // import Test4 from './Test4';
 // import Challenge from './Challenge';
 // import Arrays from './Arrays';
-// import State from './State';
+import State from './State';
 // import MyInput from './MyInput.jsx';
 
 // import { createTodos } from './utils.jsx';
@@ -20,7 +20,6 @@ import './App.css';
 // import { people } from './data.jsx';
 // import { getImageUrl } from './utils.jsx';
 
-import Lifecycle from './Lifecycle';
 
 // export const MyContext = createContext();
 
@@ -113,6 +112,12 @@ function App() {
   //   // ref.current.style.opacity = 0.5;
   // }
 
+  // const [sum, setSum] = useState(0);
+
+  // const updateSum = (value) => {
+  //   setSum((prevSum) => prevSum + value);
+  // };
+
   return (
   //   <MyContext.Provider value={{ user, setUser }}>
   //     <ChildComponent />
@@ -182,8 +187,7 @@ function App() {
 {/* <Test4/> */}
 {/* <Challenge/> */}
 {/* <Arrays /> */}
-{/* <State/> */}
-<Lifecycle/>
+<State/>
   </>
   );
 }
