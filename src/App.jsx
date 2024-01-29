@@ -10,7 +10,8 @@ import './App.css';
 // import Test4 from './Test4';
 // import Challenge from './Challenge';
 // import Arrays from './Arrays';
-import State from './State';
+// import State from './State';
+import Memoization from './Memoization';
 // import MyInput from './MyInput.jsx';
 
 // import { createTodos } from './utils.jsx';
@@ -187,7 +188,8 @@ function App() {
 {/* <Test4/> */}
 {/* <Challenge/> */}
 {/* <Arrays /> */}
-<State/>
+{/* <State/> */}
+<Memoization/>
   </>
   );
 }
