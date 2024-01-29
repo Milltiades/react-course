@@ -10,7 +10,9 @@ import './App.css';
 // import Test4 from './Test4';
 // import Challenge from './Challenge';
 // import Arrays from './Arrays';
-import State from './State';
+// import State from './State';
+// import Button from './Button';
+// import Button from './Button';
 // import MyInput from './MyInput.jsx';
 
 // import { createTodos } from './utils.jsx';
@@ -20,6 +22,9 @@ import State from './State';
 // import { people } from './data.jsx';
 // import { getImageUrl } from './utils.jsx';
 
+
+// import Button from './homework/Button';
+import Main from './homework/Main';
 
 // export const MyContext = createContext();
 
@@ -112,6 +117,12 @@ function App() {
   //   // ref.current.style.opacity = 0.5;
   // }
 
+  // const [sum, setSum] = useState(0);
+
+  // const updateSum = (value) => {
+  //   setSum((prevSum) => prevSum + value);
+  // };
+
   return (
   //   <MyContext.Provider value={{ user, setUser }}>
   //     <ChildComponent />
@@ -181,7 +192,14 @@ function App() {
 {/* <Test4/> */}
 {/* <Challenge/> */}
 {/* <Arrays /> */}
-<State/>
+{/* <State/> */}
+{/* <button>Sum of all counters: {sum}</button>
+      <Button onUpdate={updateSum} />
+      <Button onUpdate={updateSum} />
+      <Button onUpdate={updateSum} />
+      <Button onUpdate={updateSum} /> */}
+
+<Main/>
   </>
   );
 }

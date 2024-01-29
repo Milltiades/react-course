@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 const State = () => {
 
+const bt = 'dd'
 
 
     // const [answer, setAnswer] = useState('');
@@ -27,26 +28,34 @@ const State = () => {
     //   function handleTextareaChange(e) {
     //     setAnswer(e.target.value);
     //   }
-    const [text, setText] = useState('');
-    const [status, setStatus] = useState('typing');
+    // const [text, setText] = useState('');
+    // const [status, setStatus] = useState('typing');
   
-    async function handleSubmit(e) {
-      e.preventDefault();
-      setStatus('sending');
-      await sendMessage(text);
-      setStatus('sent');
-    }
+    // async function handleSubmit(e) {
+    //   e.preventDefault();
+    //   setStatus('sending');
+    //   await sendMessage(text);
+    //   setStatus('sent');
+    // }
   
-    const isSending = status === 'sending';
-    const isSent = status === 'sent';
+    // const isSending = status === 'sending';
+    // const isSent = status === 'sent';
   
-    if (isSent) {
-      return <h1>Thanks for feedback!</h1>
-    }
+    // if (isSent) {
+    //   return <h1>Thanks for feedback!</h1>
+    // }
     
   return (
     <>
-<form onSubmit={handleSubmit}>
+  {/* <h2>Almaty, Kazakhstan</h2>
+      <Panel title="About" isActive={true} >
+        With a population of about 2 million, Almaty is Kazakhstan's largest city. From 1929 to 1997, it was its capital city.
+      </Panel>
+      <Panel title="Etymology" isActive={true} >
+        The name comes from <span lang="kk-KZ">алма</span>, the Kazakh word for "apple" and is often translated as "full of apples". In fact, the region surrounding Almaty is thought to be the ancestral home of the apple, and the wild <i lang="la">Malus sieversii</i> is considered a likely candidate for the ancestor of the modern domestic apple.
+      </Panel> */}
+
+{/* <form onSubmit={handleSubmit}>
       <p>How was your stay at The Prancing Pony?</p>
       <textarea
         disabled={isSending}
@@ -61,7 +70,7 @@ const State = () => {
         Send
       </button>
       {isSending && <p>Sending...</p>}
-    </form>
+    </form> */}
     
       {/* <h2>City quiz</h2>
       <p>
@@ -107,8 +116,24 @@ export default State
 //   }
 
 // Pretend to send a message.
-function sendMessage(text) {
-    return new Promise(resolve => {
-      setTimeout(resolve, 2000);
-    });
-  }
+// function sendMessage(text) {
+//     return new Promise(resolve => {
+//       setTimeout(resolve, 2000);
+//     });
+//   }
+
+
+// function Panel({ title, children, isActive  }) {
+//     return (
+//       <section className="panel">
+//         <h3>{title}</h3>
+//         {isActive ? (
+//           <p>{children}</p>
+//         ) : (
+//           <button onClick={() => setIsActive(true)}>
+//             Show
+//           </button>
+//         )}
+//       </section>
+//     );
+//   }
