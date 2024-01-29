@@ -20,7 +20,7 @@ const [reset, setReset] = useState(false)
       <Button />
       </div>
       <button
-      style={{background: 'gray', color: 'white', padding: '5px', width: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px', cursor: 'pointer', border: 'none'}}
+      style={{background: 'green', color: 'white', padding: '5px', width: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '8px', cursor: 'pointer', border: 'none'}}
       onClick={() =>{
         setSum(0)
         setReset(true)
