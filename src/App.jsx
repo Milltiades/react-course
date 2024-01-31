@@ -13,7 +13,8 @@ import './App.css';
 // import State from './State';
 // import Memoization from './Memoization';
 // import MyInput from './MyInput.jsx';
-import UseMemo from './UseMemo';
+// import UseMemo from './UseMemo';
+import UseCallback from './UseCallback';
 
 // import { createTodos } from './utils.jsx';
 // import TodoList from './TodoList.jsx';
@@ -191,7 +192,8 @@ function App() {
 {/* <Arrays /> */}
 {/* <State/> */}
 {/* <Memoization/> */}
-<UseMemo/>
+{/* <UseMemo/> */}
+<UseCallback/>
   </>
   );
 }
