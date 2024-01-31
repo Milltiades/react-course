@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useReducer, useRef, useState } from 'react';
 import './App.css';
+import ControlledAndUncontrolled from './ControlledAndUncontrolled';
 // import Gallery from './Gallery';
 // import ChildComponent from './ChildComponent';
 // import { createContext } from 'react';
@@ -17,7 +18,7 @@ import './App.css';
 // import UseCallback from './UseCallback';
 
 // import PresentationalComponent from './PresentationalComponent';
-import ContainerComponent from './ContainerComponent';
+// import ContainerComponent from './ContainerComponent';
 
 // import { createTodos } from './utils.jsx';
 // import TodoList from './TodoList.jsx';
@@ -197,7 +198,8 @@ function App() {
 {/* <Memoization/> */}
 {/* <UseMemo/> */}
 {/* <UseCallback/> */}
-<ContainerComponent/>
+{/* <ContainerComponent/> */}
+<ControlledAndUncontrolled/>
   </>
   );
 }
