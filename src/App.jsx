@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect, useReducer, useRef, useState } from 'react';
 import './App.css';
-import ControlledAndUncontrolled from './ControlledAndUncontrolled';
+import Workout from './Workout';
+// import ControlledAndUncontrolled from './ControlledAndUncontrolled';
 // import Gallery from './Gallery';
 // import ChildComponent from './ChildComponent';
 // import { createContext } from 'react';
@@ -199,7 +200,8 @@ function App() {
 {/* <UseMemo/> */}
 {/* <UseCallback/> */}
 {/* <ContainerComponent/> */}
-<ControlledAndUncontrolled/>
+{/* <ControlledAndUncontrolled/> */}
+<Workout/>
   </>
   );
 }
