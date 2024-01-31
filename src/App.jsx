@@ -11,8 +11,9 @@ import './App.css';
 // import Challenge from './Challenge';
 // import Arrays from './Arrays';
 // import State from './State';
-import Memoization from './Memoization';
+// import Memoization from './Memoization';
 // import MyInput from './MyInput.jsx';
+import UseMemo from './UseMemo';
 
 // import { createTodos } from './utils.jsx';
 // import TodoList from './TodoList.jsx';
@@ -189,7 +190,8 @@ function App() {
 {/* <Challenge/> */}
 {/* <Arrays /> */}
 {/* <State/> */}
-<Memoization/>
+{/* <Memoization/> */}
+<UseMemo/>
   </>
   );
 }
