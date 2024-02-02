@@ -1,24 +1,40 @@
 import React from "react";
-import { useRef, useState } from "react";
+import { useRef, useState, forwardRef,useImperativeHandle } from "react";
 
+const MyInput = forwardRef((props, ref) => {
+    const realInputRef = useRef(null);
+  useImperativeHandle(ref, () => ({
+    // Only expose focus and nothing else
+    focus() {
+      realInputRef.current.focus();
+    },
+  }));
+    return <input {...props} ref={realInputRef} />;
+  });
 const EscapeHatches = () => {
-    const itemsRef = useRef(null);
-    function scrollToId(itemId) {
-        const map = getMap();
-        const node = map.get(itemId);
-        node.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center'
-        });
-      }
-      function getMap() {
-        if (!itemsRef.current) {
-          // Initialize the Map on first usage.
-          itemsRef.current = new Map();
-        }
-        return itemsRef.current;
-      }
+    const inputRef = useRef(null);
+
+    function handleClick() {
+      inputRef.current.focus();
+    }
+  
+    // const itemsRef = useRef(null);
+    // function scrollToId(itemId) {
+    //     const map = getMap();
+    //     const node = map.get(itemId);
+    //     node.scrollIntoView({
+    //       behavior: 'smooth',
+    //       block: 'nearest',
+    //       inline: 'center'
+    //     });
+    //   }
+    //   function getMap() {
+    //     if (!itemsRef.current) {
+    //       // Initialize the Map on first usage.
+    //       itemsRef.current = new Map();
+    //     }
+    //     return itemsRef.current;
+    //   }
     // const inputRef = useRef(null);
 
     // function handleClick() {
@@ -107,7 +123,13 @@ const EscapeHatches = () => {
   return (
  
     <>
-     <nav>
+      <>
+      <MyInput ref={inputRef} />
+      <button onClick={handleClick}>
+        Focus the input
+      </button>
+    </>
+     {/* <nav>
         <button onClick={() => scrollToId(0)}>
           Tom
         </button>
@@ -139,7 +161,7 @@ const EscapeHatches = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
      {/* <nav>
         <button onClick={handleScrollToFirstCat}>
           Tom
@@ -208,10 +230,12 @@ const EscapeHatches = () => {
 };
 
 export default EscapeHatches;
-const catList = [];
-for (let i = 0; i < 10; i++) {
-  catList.push({
-    id: i,
-    imageUrl: 'https://placekitten.com/250/200?image=' + i
-  });
-}
+
+
+// const catList = [];
+// for (let i = 0; i < 10; i++) {
+//   catList.push({
+//     id: i,
+//     imageUrl: 'https://placekitten.com/250/200?image=' + i
+//   });
+// }
