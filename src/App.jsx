@@ -27,6 +27,7 @@ import Workout from './Workout';
 // import Profile from './Profile';
 // import { people } from './data.jsx';
 // import { getImageUrl } from './utils.jsx';
+import EscapeHatches from './EscapeHatches';
 
 
 // export const MyContext = createContext();
@@ -201,7 +202,8 @@ function App() {
 {/* <UseCallback/> */}
 {/* <ContainerComponent/> */}
 {/* <ControlledAndUncontrolled/> */}
-<Workout/>
+{/* <Workout/> */}
+<EscapeHatches/>
   </>
   );
 }
