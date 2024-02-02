@@ -13,24 +13,38 @@ import { flushSync } from 'react-dom';
 //     return <input {...props} ref={realInputRef} />;
 //   });
 const EscapeHatches = () => {
+    const [isPlaying, setIsPlaying] = useState(false);
+    const ref = useRef(null);
+  
+    function handleClick() {
+      const nextIsPlaying = !isPlaying;
+      setIsPlaying(nextIsPlaying);
+  
+      if (nextIsPlaying) {
+        ref.current.play();
+      } else {
+        ref.current.pause();
+      }
+    }
+  
 
-    const listRef = useRef(null);
-  const [text, setText] = useState('');
-  const [todos, setTodos] = useState(
-    initialTodos
-  );
+//     const listRef = useRef(null);
+//   const [text, setText] = useState('');
+//   const [todos, setTodos] = useState(
+//     initialTodos
+//   );
 
-  function handleAdd() {
-    const newTodo = { id: nextId++, text: text };
-    flushSync(() => {
-      setText('');
-      setTodos([ ...todos, newTodo]);      
-    });
-    listRef.current.lastChild.scrollIntoView({
-      behavior: 'smooth',
-      block: 'nearest'
-    });
-  }
+//   function handleAdd() {
+//     const newTodo = { id: nextId++, text: text };
+//     flushSync(() => {
+//       setText('');
+//       setTodos([ ...todos, newTodo]);      
+//     });
+//     listRef.current.lastChild.scrollIntoView({
+//       behavior: 'smooth',
+//       block: 'nearest'
+//     });
+//   }
 
     // const inputRef = useRef(null);
 
@@ -144,6 +158,22 @@ const EscapeHatches = () => {
  
     <>
      <>
+      <button onClick={handleClick}>
+        {isPlaying ? 'Pause' : 'Play'}
+      </button>
+      <video
+        width="250"
+        ref={ref}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+      >
+        <source
+          src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </>
+     {/* <>
       <button onClick={handleAdd}>
         Add
       </button>
@@ -155,8 +185,8 @@ const EscapeHatches = () => {
         {todos.map(todo => (
           <li key={todo.id}>{todo.text}</li>
         ))}
-      </ul>
-    </>
+      </ul> */}
+    {/* </> */}
       {/* <>
       <MyInput ref={inputRef} />
       <button onClick={handleClick}>
@@ -275,11 +305,11 @@ export default EscapeHatches;
 // }
 
 
-let nextId = 0;
-let initialTodos = [];
-for (let i = 0; i < 20; i++) {
-  initialTodos.push({
-    id: nextId++,
-    text: 'Todo #' + (i + 1)
-  });
-}
+// let nextId = 0;
+// let initialTodos = [];
+// for (let i = 0; i < 20; i++) {
+//   initialTodos.push({
+//     id: nextId++,
+//     text: 'Todo #' + (i + 1)
+//   });
+// }
