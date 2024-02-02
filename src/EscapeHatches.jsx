@@ -2,6 +2,11 @@ import React from "react";
 import { useRef, useState } from "react";
 
 const EscapeHatches = () => {
+    // const inputRef = useRef(null);
+
+    // function handleClick() {
+    //   inputRef.current.focus();
+    // }
   // let ref = useRef(0);
 
   // function handleClick() {
@@ -37,28 +42,94 @@ const EscapeHatches = () => {
 //     secondsPassed = (now - startTime) / 1000;
 //   }
 
-const [text, setText] = useState('');
-const [isSending, setIsSending] = useState(false);
-const timeoutRef = useRef(null);
+// const [text, setText] = useState('');
+// const [isSending, setIsSending] = useState(false);
+// const timeoutRef = useRef(null);
 
-function handleSend() {
-  setIsSending(true);
-  timeoutRef.current = setTimeout(() => {
-    alert('Sent!');
-    setIsSending(false);
-  }, 3000);
+// function handleSend() {
+//   setIsSending(true);
+//   timeoutRef.current = setTimeout(() => {
+//     alert('Sent!');
+//     setIsSending(false);
+//   }, 3000);
+// }
+
+// function handleUndo() {
+//   setIsSending(false);
+//   clearTimeout(timeoutRef.current);
+// }
+
+const firstCatRef = useRef(null);
+const secondCatRef = useRef(null);
+const thirdCatRef = useRef(null);
+
+function handleScrollToFirstCat() {
+  firstCatRef.current.scrollIntoView({
+    behavior: 'smooth',
+    block: 'nearest',
+    inline: 'center'
+  });
 }
 
-function handleUndo() {
-  setIsSending(false);
-  clearTimeout(timeoutRef.current);
+function handleScrollToSecondCat() {
+  secondCatRef.current.scrollIntoView({
+    behavior: 'smooth',
+    block: 'nearest',
+    inline: 'center'
+  });
+}
+
+function handleScrollToThirdCat() {
+  thirdCatRef.current.scrollIntoView({
+    behavior: 'smooth',
+    block: 'nearest',
+    inline: 'center'
+  });
 }
 
   return (
-    //      <button onClick={handleClick}>
-    //   Click me!
-    // </button>
+ 
     <>
+     <nav>
+        <button onClick={handleScrollToFirstCat}>
+          Tom
+        </button>
+        <button onClick={handleScrollToSecondCat}>
+          Maru
+        </button>
+        <button onClick={handleScrollToThirdCat}>
+          Jellylorum
+        </button>
+      </nav>
+      <div>
+        <ul>
+          <li>
+            <img
+              src="https://placekitten.com/g/200/200"
+              alt="Tom"
+              ref={firstCatRef}
+            />
+          </li>
+          <li>
+            <img
+              src="https://placekitten.com/g/300/200"
+              alt="Maru"
+              ref={secondCatRef}
+            />
+          </li>
+          <li>
+            <img
+              src="https://placekitten.com/g/250/200"
+              alt="Jellylorum"
+              ref={thirdCatRef}
+            />
+          </li>
+        </ul>
+      </div>
+     {/* <input ref={inputRef} />
+      <button onClick={handleClick}>
+        Focus the input
+      </button> */}
 {/* <h1>Time passed: {secondsPassed.toFixed(3)}</h1>
       <button onClick={handleStart}>
         Start
@@ -66,7 +137,7 @@ function handleUndo() {
       <button onClick={handleStop}>
         Stop
       </button> */}
-
+{/* 
 <input
         disabled={isSending}
         value={text}
@@ -81,7 +152,7 @@ function handleUndo() {
         <button onClick={handleUndo}>
           Undo
         </button>
-      }
+      } */}
     </>
   );
 };
