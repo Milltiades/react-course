@@ -10,6 +10,7 @@ import Temperature from './react patterns/RPPattern/Temperature'
 import TemperatureConverter from './react patterns/RPPattern/TemperatureConverter'
 import Listing from './react patterns/Hooks Pattern/Listing'
 import Users from './react patterns/workout/Users'
+import Main from './react patterns/Provider pattern/Main'
 const Patterns = () => {
    
    const NewText = withStyles(Text)
@@ -20,8 +21,8 @@ const Patterns = () => {
     // <Temperature/>
     // <TemperatureConverter/>
     // <Listing/>
-    <Users/>
-
+    // <Users/>
+<Main/>
    
   )
 }
