@@ -6,8 +6,8 @@ import withStyles from './react patterns/HOC/WithStyles'
 // import withStyles from './react patterns/HOC/WithStyles'
 // import Text1 from './react patterns/HOC/Text'
 import Text from './react patterns/HOC/Text'
-import Temperature from './react patterns/RRPattern/Temperature'
-
+import Temperature from './react patterns/RPPattern/Temperature'
+import TemperatureConverter from './react patterns/RPPattern/TemperatureConverter'
 const Patterns = () => {
    
    const NewText = withStyles(Text)
@@ -15,7 +15,8 @@ const Patterns = () => {
    
    
     // <NewText/>
-    <Temperature/>
+    // <Temperature/>
+    <TemperatureConverter/>
 
    
   )
