@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect, useReducer, useRef, useState } from 'react';
 import './App.css';
-import Workout from './Workout';
+import Patterns from './Patterns';
+// import Workout from './Workout';
 // import ControlledAndUncontrolled from './ControlledAndUncontrolled';
 // import Gallery from './Gallery';
 // import ChildComponent from './ChildComponent';
@@ -27,7 +28,7 @@ import Workout from './Workout';
 // import Profile from './Profile';
 // import { people } from './data.jsx';
 // import { getImageUrl } from './utils.jsx';
-import EscapeHatches from './EscapeHatches';
+// import EscapeHatches from './EscapeHatches';
 
 
 // export const MyContext = createContext();
@@ -203,7 +204,8 @@ function App() {
 {/* <ContainerComponent/> */}
 {/* <ControlledAndUncontrolled/> */}
 {/* <Workout/> */}
-<EscapeHatches/>
+{/* <EscapeHatches/> */}
+<Patterns/>
   </>
   );
 }
