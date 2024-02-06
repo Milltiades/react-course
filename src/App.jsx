@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useReducer, useRef, useState } from 'react';
 import './App.css';
+import Workout from './Workout';
 import Patterns from './Patterns';
-// import Workout from './Workout';
 // import ControlledAndUncontrolled from './ControlledAndUncontrolled';
 // import Gallery from './Gallery';
 // import ChildComponent from './ChildComponent';
