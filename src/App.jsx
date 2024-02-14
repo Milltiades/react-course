@@ -2,6 +2,8 @@ import React, { useEffect, useLayoutEffect, useReducer, useRef, useState } from 
 import './App.css';
 import Workout from './Workout';
 import Patterns from './Patterns';
+import LazyComponent from './LazyComponent';
+import Lazy1 from './lazy1';
 // import ControlledAndUncontrolled from './ControlledAndUncontrolled';
 // import Gallery from './Gallery';
 // import ChildComponent from './ChildComponent';
@@ -205,7 +207,9 @@ function App() {
 {/* <ControlledAndUncontrolled/> */}
 {/* <Workout/> */}
 {/* <EscapeHatches/> */}
-<Patterns/>
+{/* <Patterns/> */}
+{/* <LazyComponent/> */}
+<Lazy1/>
   </>
   );
 }

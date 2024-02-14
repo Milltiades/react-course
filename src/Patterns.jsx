@@ -11,6 +11,8 @@ import TemperatureConverter from './react patterns/RPPattern/TemperatureConverte
 import Listing from './react patterns/Hooks Pattern/Listing'
 import Users from './react patterns/workout/Users'
 import Main from './react patterns/Provider pattern/Main'
+import SearchInput from './react patterns/Compound Pattern/SearchInput'
+
 const Patterns = () => {
    
    const NewText = withStyles(Text)
@@ -22,7 +24,8 @@ const Patterns = () => {
     // <TemperatureConverter/>
     // <Listing/>
     // <Users/>
-<Main/>
+// {/* <Main/> */}
+<SearchInput/>
    
   )
 }
