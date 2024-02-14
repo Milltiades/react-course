@@ -3,6 +3,7 @@ import './App.css';
 import Workout from './Workout';
 import Patterns from './Patterns';
 import LazyComponent from './LazyComponent';
+import Lazy1 from './lazy1';
 // import ControlledAndUncontrolled from './ControlledAndUncontrolled';
 // import Gallery from './Gallery';
 // import ChildComponent from './ChildComponent';
@@ -207,7 +208,8 @@ function App() {
 {/* <Workout/> */}
 {/* <EscapeHatches/> */}
 {/* <Patterns/> */}
-<LazyComponent/>
+{/* <LazyComponent/> */}
+<Lazy1/>
   </>
   );
 }
